@@ -15,12 +15,12 @@ async function bootstrap() {
     });
 
     // Version APIs
-    app.setGlobalPrefix('api');
-    app.enableVersioning({
-        type: VersioningType.URI,
-        defaultVersion: ['1'],
-    });
-    
+    // app.setGlobalPrefix('api');
+    // app.enableVersioning({
+    //     type: VersioningType.URI,
+    //     defaultVersion: ['1'],
+    // });
+
     await app.listen(3000).then(() => {
         logger.verbose(`App is running on http://localhost:${3000}`);
     });
