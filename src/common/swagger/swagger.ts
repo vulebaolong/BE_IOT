@@ -27,7 +27,7 @@ export const useSwagger = (app: INestApplication) => {
     const theme = new SwaggerTheme('v3');
     const options = {
         explorer: true,
-        customCss: theme.getBuffer('dark'),
+        // customCss: theme.getBuffer('dark'),
         swaggerOptions: {
             persistAuthorization: true,
         },
@@ -39,6 +39,7 @@ export const useSwagger = (app: INestApplication) => {
         ],
         customCssUrl: [
             'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui-standalone-preset.min.js',
         ],
     };
 
