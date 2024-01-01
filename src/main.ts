@@ -24,7 +24,7 @@ async function bootstrap() {
     });
 
     // swagger
-    // useSwagger(app);
+    useSwagger(app);
   
 
     await app.listen(3000).then(() => {
