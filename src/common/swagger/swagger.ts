@@ -6,9 +6,9 @@ import {
     SwaggerModule,
     getSchemaPath,
 } from '@nestjs/swagger';
-
-import { TAG_MODULE_USER } from 'src/common/contants/swagger.contants';
+import { TAG_MODULE_USER } from '../contants/swagger.contants';
 import { User } from 'src/modules/users/schemas/user.schema';
+
 
 export const useSwagger = (app: INestApplication) => {
     const config = new DocumentBuilder()
