@@ -24,7 +24,27 @@ async function bootstrap() {
     });
 
     // swagger
-    useSwagger(app);
+    // useSwagger(app);
+    const config = new DocumentBuilder()
+        .setTitle('IOT APIs Document')
+        .setDescription('All Modules APIs')
+        .setVersion('1.0')
+        .addBearerAuth()
+        .addTag('cats')
+        .build();
+    const document = SwaggerModule.createDocument(app, config);
+    SwaggerModule.setup('swagger', app, document, {
+        customSiteTitle: 'IOT APIs Document',
+        // customfavIcon:
+        //     'https://avatars.githubusercontent.com/u/6936373?s=200&v=4',
+        customJs: [
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.js',
+        ],
+        customCssUrl: [
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui-standalone-preset.min.js',
+        ],
+    });
 
     await app.listen(3000).then(() => {
         logger.verbose(`App is running on http://localhost:${3000}`);
