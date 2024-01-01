@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, VersioningType } from '@nestjs/common';
+import { useSwagger } from './common/swagger/swagger';
 
 async function bootstrap() {
     const logger = new Logger('Bootstrap');
@@ -20,6 +21,9 @@ async function bootstrap() {
         type: VersioningType.URI,
         defaultVersion: ['1'],
     });
+
+    // swagger
+    useSwagger(app);
 
     await app.listen(3000).then(() => {
         logger.verbose(`App is running on http://localhost:${3000}`);
