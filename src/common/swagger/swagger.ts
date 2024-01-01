@@ -9,7 +9,6 @@ import {
 
 import { TAG_MODULE_USER } from 'src/common/contants/swagger.contants';
 import { User } from 'src/modules/users/schemas/user.schema';
-import { SwaggerTheme } from 'swagger-themes';
 
 export const useSwagger = (app: INestApplication) => {
     const config = new DocumentBuilder()
@@ -19,18 +18,14 @@ export const useSwagger = (app: INestApplication) => {
         .addBearerAuth()
         .addTag(TAG_MODULE_USER)
         .build();
-
     const document = SwaggerModule.createDocument(app, config, {
         extraModels: [User],
     });
-
-    const theme = new SwaggerTheme('v3');
-    const options = {
-        // explorer: true,
-        // customCss: theme.getBuffer('dark'),
-        // swaggerOptions: {
-        //     persistAuthorization: true,
-        // },
+    SwaggerModule.setup('swagger', app, document, {
+        explorer: true,
+        swaggerOptions: {
+            persistAuthorization: true,
+        },
         customSiteTitle: 'IOT APIs Document',
         // customfavIcon:
         //     'https://avatars.githubusercontent.com/u/6936373?s=200&v=4',
@@ -41,9 +36,7 @@ export const useSwagger = (app: INestApplication) => {
         customCssUrl: [
             'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.css',
         ],
-    };
-
-    SwaggerModule.setup('swagger', app, document, options);
+    });
 };
 
 export const CreatedResponse = (mes: string, $ref: any) => {
