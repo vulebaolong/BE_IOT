@@ -31,6 +31,15 @@ export const useSwagger = (app: INestApplication) => {
         swaggerOptions: {
             persistAuthorization: true,
         },
+        customSiteTitle: 'IOT APIs Document',
+        // customfavIcon:
+        //     'https://avatars.githubusercontent.com/u/6936373?s=200&v=4',
+        customJs: [
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.js',
+        ],
+        customCssUrl: [
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.css',
+        ],
     };
 
     SwaggerModule.setup('swagger', app, document, options);
