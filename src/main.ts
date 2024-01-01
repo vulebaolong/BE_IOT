@@ -23,7 +23,7 @@ async function bootstrap() {
     });
 
     // swagger
-    useSwagger(app);
+    // useSwagger(app);
 
     await app.listen(3000).then(() => {
         logger.verbose(`App is running on http://localhost:${3000}`);
