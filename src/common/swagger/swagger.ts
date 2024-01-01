@@ -26,11 +26,11 @@ export const useSwagger = (app: INestApplication) => {
 
     const theme = new SwaggerTheme('v3');
     const options = {
-        explorer: true,
+        // explorer: true,
         // customCss: theme.getBuffer('dark'),
-        swaggerOptions: {
-            persistAuthorization: true,
-        },
+        // swaggerOptions: {
+        //     persistAuthorization: true,
+        // },
         customSiteTitle: 'IOT APIs Document',
         // customfavIcon:
         //     'https://avatars.githubusercontent.com/u/6936373?s=200&v=4',
