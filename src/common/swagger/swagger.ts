@@ -7,7 +7,7 @@ import {
     getSchemaPath,
 } from '@nestjs/swagger';
 import { TAG_MODULE_USER } from '../contants/swagger.contants';
-import { User } from 'src/modules/users/schemas/user.schema';
+import { User } from '../../modules/users/schemas/user.schema';
 
 
 export const useSwagger = (app: INestApplication) => {
