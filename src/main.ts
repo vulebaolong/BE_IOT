@@ -15,7 +15,7 @@ async function bootstrap() {
     });
 
     // Version APIs
-    // app.setGlobalPrefix('api');
+    app.setGlobalPrefix('api/v1');
     // app.enableVersioning({
     //     type: VersioningType.URI,
     //     defaultVersion: ['1'],
