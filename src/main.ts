@@ -29,7 +29,6 @@ async function bootstrap() {
         .setTitle('IOT APIs Document')
         .setDescription('All Modules APIs')
         .setVersion('1.0')
-        .addBearerAuth()
         .addTag('cats')
         .build();
     const document = SwaggerModule.createDocument(app, config);
@@ -38,11 +37,13 @@ async function bootstrap() {
         // customfavIcon:
         //     'https://avatars.githubusercontent.com/u/6936373?s=200&v=4',
         customJs: [
-            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui-bundle.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui-standalone-preset.min.js',
         ],
         customCssUrl: [
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.min.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui-standalone-preset.min.css',
             'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui.css',
-            'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.10.5/swagger-ui-standalone-preset.min.js',
         ],
     });
 
