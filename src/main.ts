@@ -4,6 +4,7 @@ import { Logger, VersioningType } from '@nestjs/common';
 import { useSwagger } from './common/swagger/swagger';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { TAG_MODULE_USER } from './common/contants/swagger.contants';
+import { User } from './modules/users/schemas/user.schema';
 
 async function bootstrap() {
     const logger = new Logger('Bootstrap');
@@ -33,7 +34,9 @@ async function bootstrap() {
         .addBearerAuth()
         .addTag(TAG_MODULE_USER)
         .build();
-    const document = SwaggerModule.createDocument(app, config);
+    const document = SwaggerModule.createDocument(app, config, {
+        extraModels: [User],
+    });
     SwaggerModule.setup('swagger', app, document, {
         explorer: true,
         swaggerOptions: {
